@@ -11,7 +11,7 @@ const nextConfig = {
     unoptimized: true,
   },
   basePath: '/portfolio',
-  assetPrefix: '/portfolio/',
+  assetPrefix: '/portfolio/',  // 👈 add this to fix resource URLs
 }
 
 export default nextConfig
