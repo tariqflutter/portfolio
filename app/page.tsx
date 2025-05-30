@@ -29,7 +29,19 @@ export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("home")
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollY, setScrollY] = useState(0)
-  const [isVisible, setIsVisible] = useState({})
+  const [isVisible, setIsVisible] = useState({
+    hero: false,
+    "about-header": false,
+    "about-content": false,
+    "about-cards": false,
+    "experience-header": false,
+    "exp-1": false,
+    "exp-2": false,
+    "exp-3": false,
+    "contact-header": false,
+    "contact-info": false,
+    "contact-form": false
+  })
 
   useEffect(() => {
     const handleScroll = () => {
@@ -705,9 +717,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Continue with enhanced styling for other sections... */}
-      {/* For brevity, I'll show the pattern but you can apply similar enhancements to Education, Skills, Projects, and Contact sections */}
-
       {/* Contact Section */}
       <section
         id="contact"
@@ -823,10 +832,9 @@ export default function Portfolio() {
             </div>
 
             <Card
-              className="hover:shadow-2xl transition-all duration-500 border-0 shadow-xl bg-gradient-to-br from-white to-emerald-50"
+              className={`hover:shadow-2xl transition-all duration-500 border-0 shadow-xl bg-gradient-to-br from-white to-emerald-50 transition-all duration-1000 delay-500 ${isVisible["contact-form"] ? "animate-in fade-in slide-in-from-right" : "opacity-0"}`}
               data-animate="true"
               id="contact-form"
-              className={`transition-all duration-1000 delay-500 ${isVisible["contact-form"] ? "animate-in fade-in slide-in-from-right" : "opacity-0"}`}
             >
               <CardHeader>
                 <CardTitle className="flex items-center">
