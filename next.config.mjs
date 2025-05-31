@@ -3,6 +3,7 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  trailingSlash: true,
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -11,7 +12,7 @@ const nextConfig = {
     unoptimized: true,
   },
   basePath: '/portfolio',
-  assetPrefix: '/portfolio/',  // 👈 add this to fix resource URLs
+  assetPrefix: '/portfolio/',
 }
 
 export default nextConfig
